@@ -16,7 +16,7 @@ header {
     color: orange;
     font-family: sans-serif;
   }
-#button {
+button {
     background-color: lightblue;
     border: 3px solid blue;
     border-radius: 25px;
