@@ -1,0 +1,30 @@
+body {
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+  }
+header {
+    text-align: center;
+  }
+.thumbnail {
+    float: left;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+.subheading {
+    color: orange;
+    font-family: sans-serif;
+  }
+#button {
+    background-color: lightblue;
+    border: 3px solid blue;
+    border-radius: 25px;
+  }
+#menu-item {
+    display: inline;
+    font-family: serif;
+  }
+.logo {
+  max-width: 250px;
+}
