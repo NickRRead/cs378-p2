@@ -1,11 +1,11 @@
 alert('Hit ok please');
 
-var mac_button = document.getElementByID('mac-button');
-var pasta_button = document.getElementByID('pasta-button');
-var taco_button = document.getElementByID('taco-button');
-var ench_button = document.getElementByID('ench-button');
-var order_button = document.getElementByID('order-button');
-var clear_button = document.getElementByID('clear-button');
+var mac_button = document.getElementById('mac-button');
+var pasta_button = document.getElementById('pasta-button');
+var taco_button = document.getElementById('taco-button');
+var ench_button = document.getElementById('ench-button');
+var order_button = document.getElementById('order-button');
+var clear_button = document.getElementById('clear-button');
 
 mac_button.addEventListener('click', mac_func);
 pasta_button.addEventListener('click', pasta_func);
