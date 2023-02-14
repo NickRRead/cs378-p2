@@ -14,6 +14,12 @@ var sub_dis = document.getElementById('subtotal');
 
 let mac_ct = 0;
 var mac_ct_dis = document.getElementById('mac-ct');
+let pasta_ct = 0;
+var pasta_ct_dis = document.getElementById('pasta-ct');
+let taco_ct = 0;
+var taco_ct_dis = document.getElementById('taco-ct');
+let ench_ct = 0;
+var ench_ct_dis = document.getElementById('mac-ct');
 
 mac_button.addEventListener('click', mac_func);
 pasta_button.addEventListener('click', pasta_func);
@@ -29,49 +35,91 @@ order_button.addEventListener('click', order_func);
 clear_button.addEventListener('click', clear_func);
 
 function mac_func() {
-  alert('mac_button clicked!');
   if (mac_ct > 0) {
     mac_ct_dis.textContent = --mac_ct;
-    subtotal = subtotal - 5;
-    sub_dis.textContent = '$' + subtotal;
+    subtotal = Math.max(subtotal - 5, 0);
+    sub_dis.textContent = 'Subtotal: $' + subtotal;
   }
 }
 
 function pasta_func() {
-  alert('pasta_button clicked!');
+  if (pasta_ct > 0) {
+    pasta_ct_dis.textContent = --pasta_ct;
+    subtotal = Math.max(subtotal - 8, 0);
+    sub_dis.textContent = 'Subtotal: $' + subtotal;
+  }
 }
 
 function taco_func() {
-  alert('taco_button clicked!');
+  if (taco_ct > 0) {
+    taco_ct_dis.textContent = --taco_ct;
+    subtotal = Math.max(subtotal - 8, 0);
+    sub_dis.textContent = 'Subtotal: $' + subtotal;
+  }
 }
 
 function ench_func() {
-  alert('ench_button clicked!');
+  if (ench_ct > 0) {
+    ench_ct_dis.textContent = --ench_ct;
+    subtotal = Math.max(subtotal - 10, 0);
+    sub_dis.textContent = 'Subtotal: $' + subtotal;
+  }
 }
 
 function mac_up_func() {
-  alert('mac_button clicked!');
   mac_ct_dis.textContent = ++mac_ct;
   subtotal = subtotal + 5;
-  sub_dis.textContent = '$' + subtotal
+  sub_dis.textContent = 'Subtotal: $' + subtotal;
 }
 
 function pasta_up_func() {
-  alert('pasta_button clicked!');
+  pasta_ct_dis.textContent = ++pasta_ct;
+  subtotal = subtotal + 8;
+  sub_dis.textContent = 'Subtotal: $' + subtotal;
 }
 
 function taco_up_func() {
-  alert('taco_button clicked!');
+  taco_ct_dis.textContent = ++taco_ct;
+  subtotal = subtotal + 8;
+  sub_dis.textContent = 'Subtotal: $' + subtotal;
 }
 
 function ench_up_func() {
-  alert('ench_button clicked!');
+  ench_ct_dis.textContent = ++ench_ct;
+  subtotal = subtotal + 10;
+  sub_dis.textContent = 'Subtotal: $' + subtotal;
 }
 
 function order_func() {
-  alert('order_button clicked!');
+  if (mac_ct + pasta_ct + taco_ct + ench_ct == 0){
+    alert('No items in cart');
+  } else {
+    let output = 'Order placed!\n';
+    if (mac_ct > 0) {
+      output = output + mac_ct + " Mac & Cheese ";
+    }
+    if (pasta_ct > 0) {
+      output = output + pasta_ct + " Pasta ";
+    }
+    if (taco_ct > 0) {
+      output = output + taco_ct + " Taco ";
+    }
+    if (ench_ct > 0) {
+      output = output + ench_ct + " Enchilada ";
+    }
+    alert(output);
+  }
 }
 
 function clear_func() {
-  alert('clear_button clicked!');
+  mac_ct = 0;
+  mac_ct_dis.textContent = "0";
+  pasta_ct = 0;
+  pasta_ct_dis.textContent = "0";
+  taco_ct = 0;
+  taco_ct_dis.textContent = "0";
+  ench_ct = 0;
+  ench_ct_dis.textContent = "0";
+  subtotal = 0;
+  sub_dis.textContent = "Subtotal:";
 }
