@@ -34,6 +34,7 @@ function mac_func() {
     mac_ct_dis.textContent = --mac_ct;
     subtotal = subtotal - 5;
     sub_dis.textContent = '$' + subtotal;
+  }
 }
 
 function pasta_func() {
