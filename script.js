@@ -19,7 +19,7 @@ var pasta_ct_dis = document.getElementById('pasta-ct');
 let taco_ct = 0;
 var taco_ct_dis = document.getElementById('taco-ct');
 let ench_ct = 0;
-var ench_ct_dis = document.getElementById('mac-ct');
+var ench_ct_dis = document.getElementById('ench-ct');
 
 mac_button.addEventListener('click', mac_func);
 pasta_button.addEventListener('click', pasta_func);
