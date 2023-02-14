@@ -1,5 +1,3 @@
-alert('Hit ok please');
-
 var mac_button = document.getElementById('mac-button');
 var pasta_button = document.getElementById('pasta-button');
 var taco_button = document.getElementById('taco-button');
@@ -10,6 +8,12 @@ var taco_up = document.getElementById('taco-up');
 var ench_up = document.getElementById('ench-up');
 var order_button = document.getElementById('order-button');
 var clear_button = document.getElementById('clear-button');
+
+let subtotal = 0;
+var sub_dis = document.getElementById('subtotal');
+
+let mac_ct = 0;
+var mac_ct_dis = document.getElementById('mac-ct');
 
 mac_button.addEventListener('click', mac_func);
 pasta_button.addEventListener('click', pasta_func);
@@ -26,6 +30,10 @@ clear_button.addEventListener('click', clear_func);
 
 function mac_func() {
   alert('mac_button clicked!');
+  if (mac_ct > 0) {
+    mac_ct_dis.textContent = --mac_ct;
+    subtotal = subtotal - 5;
+    sub_dis.textContent = '$' + subtotal;
 }
 
 function pasta_func() {
@@ -42,6 +50,9 @@ function ench_func() {
 
 function mac_up_func() {
   alert('mac_button clicked!');
+  mac_ct_dis.textContent = ++mac_ct;
+  subtotal = subtotal + 5;
+  sub_dis.textContent = '$' + subtotal
 }
 
 function pasta_up_func() {
